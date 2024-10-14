@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "fooRound",
+  "version": "1.0",
+  "description": "Record and display current tab",
+  "permissions": [
+    "activeTab",
+    "tabCapture",
+    "downloads",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
